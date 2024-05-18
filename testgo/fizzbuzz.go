@@ -3,12 +3,16 @@ package main
 import "strconv"
 
 func FizzBuzz(n int) string {
-	return check(n)
+	result := strconv.Itoa(n)
+	result = check(result, "Fizz", n%3 == 0)
+	result = check(result, "Buzz", n%5 == 0)
+	return result
 }
 
-func check(n int) string {
-	if n%3 == 0 {
-		return "Fizz"
+func check(original string, s string, c bool) string {
+	if c {
+		return s
+	} else {
+		return original
 	}
-	return strconv.Itoa(n)
 }
