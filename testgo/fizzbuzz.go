@@ -4,10 +4,11 @@ import "strconv"
 
 func FizzBuzz(n int) string {
 	result := strconv.Itoa(n)
-	result = check(n, result)
+	result = check("Fizz", result, n%3 == 0)
+	result = check("Buzz", result, n%5 == 0)
 	return result
 }
 
-func check(n int, original string) string {
-	return (map[bool]string{true: "Fizz", false: original})[n%3 == 0]
+func check(s string, original string, c bool) string {
+	return (map[bool]string{true: s, false: original})[c]
 }
