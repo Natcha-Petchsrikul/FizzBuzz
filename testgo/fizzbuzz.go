@@ -16,8 +16,8 @@ func NewFizzBuzz(input int) FizzBuzz {
 
 func (f *FizzBuzz) calculate() string {
 	result := strconv.Itoa(f.Input)
-	m := map[int]string{3: "Fizz", 5: "Buzz"}
-	a := [2]int{3, 5}
+	m := map[int]string{3: "Fizz", 5: "Buzz", 15: "FizzBuzz"}
+	a := [3]int{3, 5, 15}
 	for _, v := range a {
 		if f.Input%v == 0 {
 			result = m[v]
